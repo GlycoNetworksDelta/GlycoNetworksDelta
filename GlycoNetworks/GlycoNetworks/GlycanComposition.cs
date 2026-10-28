@@ -1,4 +1,5 @@
 ﻿// © 2024, 2025 Aliana Tang <alianatang17@gmail.com>
+// © 2026 Alyssa Tang <alyssayztang@gmail.com>
 
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,20 @@ namespace GlycoNetworks
             String strComp = "";
             for (int i = 0; i < Keys.Count; i++)
             {
-                if (this[Keys.ToList()[i]] != 0) strComp += Keys.ToList()[i] + "(" + this[Keys.ToList()[i]] + ")";
+                if (this[Keys.ToList()[i]] != 0)
+                {
+                    string key = Keys.ToList()[i];
+                    int count = this[Keys.ToList()[i]];
+                    double keyAsMass;
+                    if (Double.TryParse(key, out keyAsMass))
+                    {
+                        strComp += ' ' + (count * keyAsMass).ToString();
+                    }
+                    else
+                    {
+                        strComp += key + "(" + count + ")";
+                    }
+                }
             }
             return strComp;
         }
