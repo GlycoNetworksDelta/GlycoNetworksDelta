@@ -1,4 +1,5 @@
 ﻿// © 2024, 2025 Aliana Tang <alianatang17@gmail.com>
+// © 2026 Alyssa Tang <alyssayztang@gmail.com>
 
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,15 @@ namespace GlycoNetworks
         public int Charge { get; set; }
         public double Rt { get; set; }
         public double PrecursorMz { get; set; }
+
         public int findLen()
         {
             return Data.Count;
+        }
+
+        public List<Point> getData()
+        {
+            return Data;
         }
 
         public double corrIntensity(double mass_num)
@@ -94,7 +101,7 @@ namespace GlycoNetworks
 
             if (sortedData.Count > 25)
             {
-                for (int i = 24; i < sortedData.Count;)// for (int i = sortedData.Count; i >=50; i--) may/may not b faster
+                for (int i = 24; i < sortedData.Count;)// for (int i = sortedData.Count; i >=50; i--) may/may not be faster
                 {
                     sortedData.RemoveAt(i);
                 }

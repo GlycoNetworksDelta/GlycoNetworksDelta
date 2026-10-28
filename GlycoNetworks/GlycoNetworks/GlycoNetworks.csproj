@@ -5,12 +5,25 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>GlycoNetworksDelta</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <None Update="ConvertToMgf.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\moons\dev\GlycoNetworks\GlycoNetworks\GlycoNetworks\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\moons\dev\GlycoNetworks\GlycoNetworks\GlycoNetworks\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

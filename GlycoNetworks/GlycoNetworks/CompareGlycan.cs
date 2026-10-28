@@ -1,4 +1,5 @@
 ﻿// © 2024, 2025 Aliana Tang <alianatang17@gmail.com>
+// © 2026 Alyssa Tang <alyssayztang@gmail.com>
 
 using System;
 using System.Collections.Generic;
@@ -26,13 +27,14 @@ namespace GlycoNetworks
             return totalMass;
         }
 
-        public string writeEdge(int biggerIndex, int smallerIndex, double glycan_mass, string labelname, List<Glycopep> glycopeptides, Dictionary<Glycopep, List<Edge>> graph)
+        public string writeEdge(int biggerIndex, int smallerIndex, double glycan_mass, string labelname, List<Glycopep> glycopeptides, Dictionary<Glycopep, List<Edge<Glycopep>>> graph)
         {   
             string edge_code = "";
             double bigger = glycopeptides[biggerIndex].glycanMass;
             double smaller = glycopeptides[smallerIndex].glycanMass;
             double diff = bigger - smaller;
             
+
             if ((glycan_mass - Constants.tolerance < diff && diff < glycan_mass + Constants.tolerance))
             {
                 edge_code = "  edge\n  [ source  " + smallerIndex.ToString() + "\n    target  " + biggerIndex.ToString() + "\n    LabelGraphics" + 
@@ -41,13 +43,13 @@ namespace GlycoNetworks
                 Glycopep glycopep1 = glycopeptides[biggerIndex];
                 Glycopep glycopep2 = glycopeptides[smallerIndex];
                 
-                Edge edge1 = new Edge();
+                Edge<Glycopep> edge1 = new Edge<Glycopep>();
                 edge1.source = glycopep1;
                 edge1.target = glycopep2;
                 edge1.glycDiff = labelname;
                 edge1.increasing = -1;
 
-                Edge edge2 = new Edge();
+                Edge<Glycopep> edge2 = new Edge<Glycopep>();
                 edge2.source = glycopep2;
                 edge2.target = glycopep1;
                 edge2.glycDiff = labelname;
@@ -60,11 +62,11 @@ namespace GlycoNetworks
             return edge_code;
         }
 
-        public void dfs(Dictionary<Glycopep, List<Edge>> graph, Glycopep node, double tolerance, List<Glycopep> visited)
+        public void dfs(Dictionary<Glycopep, List<Edge<Glycopep>>> graph, Glycopep node, double tolerance, List<Glycopep> visited)
         {
             visited.Add(node);
             //Console.WriteLine(node.glycanMass);
-            foreach (Edge neighbor in graph[node])
+            foreach (Edge<Glycopep> neighbor in graph[node])
             {
                 if (!visited.Contains(neighbor.target))
                 {
@@ -75,7 +77,7 @@ namespace GlycoNetworks
 
         }
 
-        public List<string> FindAdditionalGlycans(List<Glycopep> glycopepList, Dictionary<Glycopep, List<Edge>> graph, List<GlycanComposition> compositions, string additionalGlycansDetailsFilename)
+        public List<string> FindAdditionalGlycans(List<Glycopep> glycopepList, Dictionary<Glycopep, List<Edge<Glycopep>>> graph, List<GlycanComposition> compositions, string additionalGlycansDetailsFilename)
         {
             var additionalGlycans = new List<GlycanComposition>();
             using (var additionalGlycansDetailsFile = new StreamWriter(additionalGlycansDetailsFilename))
@@ -92,7 +94,7 @@ namespace GlycoNetworks
                         dfs(graph, glycopepList[i], Constants.tolerance, visited);
                         if (glycopepList[i].comp != null && visited.Count >= 3)
                         {
-                            foreach (Edge edge in graph[glycopepList[i]])
+                            foreach (Edge<Glycopep> edge in graph[glycopepList[i]])
                             {
                                 if (edge.target.comp == null)
                                 {
