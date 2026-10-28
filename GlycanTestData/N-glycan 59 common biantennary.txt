@@ -1,0 +1,62 @@
+% Short list of common N-glycans including those on therapeutic IgG's
+%   No tri- or tetra-antennary N-glycans
+HexNAc(1) % 203.079373
+HexNAc(2) % 406.158746
+HexNAc(1)Fuc(1) % 349.137282
+HexNAc(2)Fuc(1) % 552.216655
+HexNAc(2)Hex(1) % 568.21157
+HexNAc(2)Hex(2) 
+HexNAc(2)Hex(2)Fuc(1)
+HexNAc(2)Hex(3) % 892.317218
+HexNAc(2)Hex(3)Fuc(1) % 1038.375127
+HexNAc(2)Hex(4) % 1054.370042
+HexNAc(2)Hex(5) % 1216.422866
+HexNAc(2)Hex(5)Fuc(1) % 1362.480775
+HexNAc(2)Hex(6) % 1378.47569
+HexNAc(2)Hex(7) % 1540.528514
+HexNAc(2)Hex(8) % 1702.581338
+HexNAc(2)Hex(9) % 1864.634162
+HexNAc(3)Hex(3) % 1095.396591
+HexNAc(3)Hex(2)Fuc(1) % G0F missing an arm
+HexNAc(3)Hex(2) % G0 missing an arm
+HexNAc(3)Hex(3)Fuc(1) % 1241.4545
+HexNAc(3)Hex(4) % 1257.449415
+HexNAc(3)Hex(4)Fuc(1) % 1403.507321
+HexNAc(3)Hex(4)NeuAc(1) % 1548.544829
+HexNAc(3)Hex(4)NeuAc(1)Fuc(1) % 1694.602735
+HexNAc(3)Hex(5) % 1419.502239
+HexNAc(3)Hex(6)  % 1581.555059
+HexNAc(4)Hex(3) % 1298.475964   G0
+HexNAc(4)Hex(3)Fuc(1) % 1444.533873   G0F
+HexNAc(4)Hex(4) % 1460.528788
+HexNAc(4)Hex(4)Fuc(1) % 1606.586697
+HexNAc(4)Hex(4)NeuAc(1) % 1751.624202
+HexNAc(4)Hex(4)NeuAc(1)Fuc(1) % 1897.682108
+HexNAc(4)Hex(4)Fuc(1)Pent(1) % 1738.628952
+HexNAc(4)Hex(5) % 1622.581612    
+HexNAc(4)Hex(5)Fuc(1) % 1768.639521
+HexNAc(4)Hex(5)NeuAc(1) % 1913.677029
+HexNAc(4)Hex(5)Fuc(1)NeuAc(1) % 2059.734938
+HexNAc(4)Hex(5)NeuAc(2) % 2204.772446
+HexNAc(4)Hex(5)Fuc(1)NeuAc(2) % 2350.830355
+HexNAc(4)Hex(5)NeuAc(2)Na(1) % 2226.75438867
+HexNAc(4)Hex(5)Fuc(1)NeuAc(2)Na(1) % 2372.81229767
+HexNAc(4)Hex(5)NeuAc(1)NeuGc(1) % 2220.76736
+HexNAc(4)Hex(5)Fuc(1)NeuAc(1)NeuGc(1) % 2366.825269
+HexNAc(4)Hex(5)NeuGc(2) % 2236.762274
+HexNAc(4)Hex(5)Fuc(1)NeuGc(2) % 2382.820183
+HexNAc(4)Hex(5)Fuc(1)NeuGc(1)  %  2075.729848
+HexNAc(4)Hex(6)Fuc(1)NeuAc(1)  %  2221.787757
+HexNAc(4)Hex(6)Fuc(1)NeuGc(1)   %  2237.782672
+HexNAc(4)Hex(7)  %  1946.687255
+HexNAc(4)Hex(7)Fuc(1)  % 2092.745164
+HexNAc(4)Hex(6) % 1784.634436
+HexNAc(4)Hex(6)Fuc(1) % 1930.692345
+HexNAc(5)Hex(4)  %  1663.608157
+HexNAc(5)Hex(4)Fuc(1)  %  1809.666066
+HexNAc(5)Hex(5)Fuc(1)  %   1971.718889
+HexNAc(5)Hex(5)Fuc(1)NeuAc(1)  %  2262.814306
+HexNAc(5)Hex(5)Fuc(1)NeuAc(2) % 2553.909728
+% Two new ones
+HexNAc(4)Hex(4)Fuc(1)NeuAc(1)
+HexNAc(3)Hex(4)Fuc(1)NeuAc(1)
